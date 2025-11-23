@@ -1,0 +1,276 @@
+/* --- Global Styles and Relative Units --- */
+:root {
+    /* Base Font Size for REM calculation: 1rem = 16px */
+    font-size: 16px; 
+    --primary-color: #7979d3; /* A soft blue/purple for accents */
+    --secondary-color: #f0f0f5; /* Light grey/off-white background */
+    --dark-color: #333;
+    --light-text: #fff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+h2, h3 {
+    /* Relative font size for headings */
+    margin-bottom: 0.5rem; 
+}
+
+.common-padding {
+    /* Use relative units for padding */
+    padding: 3rem 5vw; 
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- Header & Navigation (Flexbox) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Gradient background similar to the video's hero/header area */
+    background: linear-gradient(to right, #e0e0f0, #f0e0f0); 
+    padding: 1rem 5vw;
+    height: 10vh; /* Using viewport height for consistency */
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.main-nav a {
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+    /* CSS Transition for smooth hover effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease; 
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Hero Section (Flexbox) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Mobile-first: stack content and image */
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #e0e0f0, #f0e0f0); 
+    padding: 5rem 5vw;
+    text-align: center;
+}
+
+.name {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    /* === ADDED: Smooth transition for color change === */
+    transition: color 0.5s ease; 
+}
+
+/* === ADDED: Hover effect for the name === */
+.name:hover {
+    color: var(--dark-color); /* Changes color on hover */
+    cursor: pointer;
+}
+/* ======================================= */
+
+.hero-image {
+    width: 100%;
+    max-width: 300px;
+    padding-top: 2rem;
+}
+
+.profile-circle {
+    width: 250px;
+    height: 250px;
+    background-color: #d0d0e8; 
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    margin: 0 auto;
+    
+    /* === IMAGE APPLICATION === */
+    background-image: url('BHAVESH.jpg'); 
+    background-size: cover;
+    background-position: center;
+    /* ========================= */
+}
+
+/* --- About Me Section --- */
+.about-section {
+    background-color: var(--light-text);
+    text-align: center;
+    border-radius: 10px;
+    margin: 3rem 5vw;
+    box-shadow: var(--box-shadow);
+}
+
+/* --- Skills Section (CSS Grid) --- */
+.skills-grid {
+    display: grid;
+    /* Mobile-first: single column */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: var(--light-text);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    /* CSS Transition for smooth transform on hover */
+    transition: transform 0.3s ease; 
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background-color: #e6e6fa; /* Subtle color change */
+}
+
+/* --- Projects Section (CSS Grid) --- */
+.projects-grid {
+    display: grid;
+    /* Mobile-first: single column for projects */
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--light-text);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 300px; 
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* --- Contact Form --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    /* Use relative font size */
+    font-size: 1rem; 
+}
+
+.send-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: #4a4a9c;
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 1.5rem 5vw;
+    background: #d0d0e8;
+    color: var(--dark-color);
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* --- Media Queries for Desktop/Tablet Layouts --- */
+@media (min-width: 768px) {
+    
+    /* Hero: Content side-by-side */
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        padding: 5rem 10vw;
+    }
+
+    .hero-content {
+        flex-basis: 50%;
+    }
+    
+    .hero-image {
+        flex-basis: 40%;
+        text-align: right;
+        padding-top: 0;
+    }
+
+    /* Skills Grid: 3 columns */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Projects Grid: 2 columns */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
